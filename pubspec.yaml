@@ -31,7 +31,7 @@ dependencies:
   responsive_framework: ^0.0.7
   google_fonts: ^1.1.0
   circular_profile_avatar: ^1.0.6
-  liquid_swipe: ^1.5.0-dev.1
+  liquid_swipe: ^1.5.0-dev.3
   modal_bottom_sheet: ^0.2.0+1
   nice_button: ^0.1.7
   font_awesome_flutter: ^8.8.1
