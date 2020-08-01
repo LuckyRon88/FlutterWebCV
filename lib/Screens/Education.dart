@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:motion_tab_bar/MotionTabBarView.dart';
 import 'package:motion_tab_bar/MotionTabController.dart';
 import 'package:motion_tab_bar/motiontabbar.dart';
@@ -22,7 +23,8 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     myModel = Provider.of<MyModel>(context, listen: false);
-    _tabController = MotionTabController(initialIndex: 1, vsync: this);
+    _tabController =
+        MotionTabController(initialIndex: 0, vsync: this, length: 2);
   }
 
   @override
@@ -40,17 +42,20 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
         child: Scaffold(
           bottomNavigationBar: MotionTabBar(
             labels: listOfLabels,
-            initialSelectedTab: listOfLabels[1],
-            tabIconColor: Colors.green,
-            tabSelectedColor: Colors.red,
+            initialSelectedTab: listOfLabels[0],
+            tabIconColor: Colors.black,
+            tabSelectedColor: Colors.blue,
             onTabItemSelected: (int value) {
               print(value);
               setState(() {
                 _tabController.index = value;
               });
             },
-            icons: [Icons.account_box, Icons.home, Icons.menu],
-            textStyle: TextStyle(color: Colors.red),
+            icons: [
+              FontAwesomeIcons.graduationCap,
+              FontAwesomeIcons.graduationCap
+            ],
+            textStyle: TextStyle(color: Colors.blue),
           ),
           backgroundColor: EducationScreenBackGroundColor,
           body: Row(
@@ -95,22 +100,17 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
   }
 }
 
-List<String> listOfLabels = ["Account", "Home", "Dashboard"];
+List<String> listOfLabels = ["Bachelors", "PostGrad"];
 
 List<Widget> listOfWidgets = [
   Container(
     child: Center(
-      child: Text("Account"),
+      child: Text("Bachelors"),
     ),
   ),
   Container(
     child: Center(
-      child: Text("Home"),
-    ),
-  ),
-  Container(
-    child: Center(
-      child: Text("Dashboard"),
+      child: Text("PostGrad"),
     ),
   ),
 ];
