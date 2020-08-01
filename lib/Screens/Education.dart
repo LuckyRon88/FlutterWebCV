@@ -1,14 +1,16 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:roncv/Components/ArrowWidget.dart';
-import 'package:roncv/Components/EducationPageMainWidget.dart';
 import 'package:roncv/Components/FAB.dart';
+import 'package:roncv/Components/TestTab.dart';
 import 'package:roncv/Styles/ColorStyling.dart';
 
 import '../ProviderPack/PageController.dart';
 
 class Education extends StatelessWidget {
   static String title = 'School';
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -18,11 +20,11 @@ class Education extends StatelessWidget {
       color: Colors.black,
       child: SafeArea(
         child: Scaffold(
-          floatingActionButton: FAB(
-            iconColor: EducationScreenBackGroundColor,
-            context: context,
-            height: height,
-          ),
+//          floatingActionButton: FAB(
+//            iconColor: EducationScreenBackGroundColor,
+//            context: context,
+//            height: height,
+//          ),
           backgroundColor: EducationScreenBackGroundColor,
           body: Stack(
             children: [
@@ -55,8 +57,23 @@ class Education extends StatelessWidget {
                 alignment: Alignment.centerLeft,
               ),
               Align(
-                  alignment: Alignment.center,
-                  child: EducationPageMainWidget()),
+                alignment: Alignment.bottomCenter,
+                child: TestTab(),
+              ),
+              Align(
+                alignment: Alignment.topRight,
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: FAB(
+                    iconColor: EducationScreenBackGroundColor,
+                    context: context,
+                    height: height,
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.center,
+              )
             ],
           ),
         ),

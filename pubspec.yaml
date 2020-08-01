@@ -36,7 +36,9 @@ dependencies:
   nice_button: ^0.1.7
   font_awesome_flutter: ^8.8.1
   provider: ^4.3.1
-  expandable: ^4.1.4
+  extended_tabs: ^0.2.3
+  motion_tab_bar: ^0.1.5
+
 
 
 dev_dependencies:
