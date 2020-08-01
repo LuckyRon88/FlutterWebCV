@@ -16,23 +16,24 @@ class Education extends StatefulWidget {
 
 class _EducationState extends State<Education> with TickerProviderStateMixin {
   MotionTabController _tabController;
+  MyModel myModel;
 
   @override
   void initState() {
     super.initState();
+    myModel = Provider.of<MyModel>(context, listen: false);
     _tabController = MotionTabController(initialIndex: 1, vsync: this);
   }
 
   @override
   void dispose() {
     super.dispose();
+    print("disposed of tab controller");
     _tabController.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    final myModel = Provider.of<MyModel>(context, listen: false);
-
     return Container(
       color: Colors.black,
       child: SafeArea(
@@ -52,45 +53,40 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
             textStyle: TextStyle(color: Colors.red),
           ),
           backgroundColor: EducationScreenBackGroundColor,
-          body: Stack(
+          body: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Align(
-                child: RawMaterialButton(
-                  splashColor: Colors.transparent,
-                  mouseCursor: MaterialStateMouseCursor.clickable,
-                  onPressed: () {
-                    myModel.nextPage();
-                  },
-                  child: Transform.translate(
-                    offset: const Offset(20, 0),
-                    child: ArrowWidget(pointsLeft: false),
-                  ),
+              RawMaterialButton(
+                splashColor: Colors.transparent,
+                mouseCursor: MaterialStateMouseCursor.clickable,
+                onPressed: () {
+                  myModel.previousPage();
+                },
+                child: Transform.translate(
+                  offset: const Offset(-20, 0),
+                  child: ArrowWidget(pointsLeft: true),
                 ),
-                alignment: Alignment.centerRight,
               ),
-              Align(
-                child: RawMaterialButton(
-                  splashColor: Colors.transparent,
-                  mouseCursor: MaterialStateMouseCursor.clickable,
-                  onPressed: () {
-                    myModel.previousPage();
-                  },
-                  child: Transform.translate(
-                    offset: const Offset(-20, 0),
-                    child: ArrowWidget(pointsLeft: true),
-                  ),
-                ),
-                alignment: Alignment.centerLeft,
-              ),
-              Align(
-                alignment: Alignment.center,
+              Expanded(
                 child: Container(
                   child: MotionTabBarView(
                     controller: _tabController,
                     children: listOfWidgets,
                   ),
                 ),
-              )
+              ),
+              RawMaterialButton(
+                splashColor: Colors.transparent,
+                mouseCursor: MaterialStateMouseCursor.clickable,
+                onPressed: () {
+                  myModel.nextPage();
+                },
+                child: Transform.translate(
+                  offset: const Offset(20, 0),
+                  child: ArrowWidget(pointsLeft: false),
+                ),
+              ),
             ],
           ),
         ),
@@ -103,22 +99,16 @@ List<String> listOfLabels = ["Account", "Home", "Dashboard"];
 
 List<Widget> listOfWidgets = [
   Container(
-    height: 200,
-    width: 200,
     child: Center(
       child: Text("Account"),
     ),
   ),
   Container(
-    height: 200,
-    width: 200,
     child: Center(
       child: Text("Home"),
     ),
   ),
   Container(
-    height: 200,
-    width: 200,
     child: Center(
       child: Text("Dashboard"),
     ),
