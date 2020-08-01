@@ -10,8 +10,26 @@ import 'package:roncv/Styles/ColorStyling.dart';
 
 import '../ProviderPack/PageController.dart';
 
-class Education extends StatelessWidget {
-  var TestTab = testTab();
+class Education extends StatefulWidget {
+  @override
+  _EducationState createState() => _EducationState();
+}
+
+class _EducationState extends State<Education> with TickerProviderStateMixin {
+  MotionTabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = MotionTabController(initialIndex: 1, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _tabController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -21,6 +39,20 @@ class Education extends StatelessWidget {
       color: Colors.black,
       child: SafeArea(
         child: Scaffold(
+          bottomNavigationBar: MotionTabBar(
+            labels: ["Account", "Home", "Dashboard"],
+            initialSelectedTab: "Home",
+            tabIconColor: Colors.green,
+            tabSelectedColor: Colors.red,
+            onTabItemSelected: (int value) {
+              print(value);
+              setState(() {
+                _tabController.index = value;
+              });
+            },
+            icons: [Icons.account_box, Icons.home, Icons.menu],
+            textStyle: TextStyle(color: Colors.red),
+          ),
           backgroundColor: EducationScreenBackGroundColor,
           body: Stack(
             children: [
@@ -54,7 +86,6 @@ class Education extends StatelessWidget {
               ),
               Align(
                 alignment: Alignment.bottomCenter,
-                child: TestTab,
               ),
               Align(
                 alignment: Alignment.topRight,
@@ -69,73 +100,33 @@ class Education extends StatelessWidget {
               ),
               Align(
                 alignment: Alignment.center,
-                child: MotionTabBarView(
-                  controller: TestTab.toRet(),
-                  children: <Widget>[
-                    Container(
-                      child: Center(
-                        child: Text("Account"),
+                child: Container(
+                  child: MotionTabBarView(
+                    controller: _tabController,
+                    children: <Widget>[
+                      Container(
+                        child: Center(
+                          child: Text("Account"),
+                        ),
                       ),
-                    ),
-                    Container(
-                      child: Center(
-                        child: Text("Home"),
+                      Container(
+                        child: Center(
+                          child: Text("Home"),
+                        ),
                       ),
-                    ),
-                    Container(
-                      child: Center(
-                        child: Text("Dashboard"),
+                      Container(
+                        child: Center(
+                          child: Text("Dashboard"),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               )
             ],
           ),
         ),
       ),
-    );
-  }
-}
-
-class testTab extends StatefulWidget {
-  MotionTabController eduTabController;
-
-  MotionTabController toRet() => eduTabController;
-
-  @override
-  _testTabState createState() => _testTabState();
-}
-
-class _testTabState extends State<testTab> with TickerProviderStateMixin {
-  @override
-  void initState() {
-    super.initState();
-    this.widget.eduTabController =
-        MotionTabController(initialIndex: 1, vsync: this);
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    this.widget.eduTabController.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return MotionTabBar(
-      labels: ["Account", "Home", "Dashboard"],
-      initialSelectedTab: "Home",
-      tabIconColor: Colors.green,
-      tabSelectedColor: Colors.red,
-      onTabItemSelected: (int value) {
-        print(value);
-        setState(() {
-          this.widget.eduTabController.index = value;
-        });
-      },
-      icons: [Icons.account_box, Icons.home, Icons.menu],
-      textStyle: TextStyle(color: Colors.red),
     );
   }
 }
