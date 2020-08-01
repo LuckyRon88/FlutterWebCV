@@ -5,7 +5,6 @@ import 'package:motion_tab_bar/MotionTabController.dart';
 import 'package:motion_tab_bar/motiontabbar.dart';
 import 'package:provider/provider.dart';
 import 'package:roncv/Components/ArrowWidget.dart';
-import 'package:roncv/Components/FAB.dart';
 import 'package:roncv/Styles/ColorStyling.dart';
 
 import '../ProviderPack/PageController.dart';
@@ -32,7 +31,6 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
     final myModel = Provider.of<MyModel>(context, listen: false);
 
     return Container(
@@ -40,8 +38,8 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
       child: SafeArea(
         child: Scaffold(
           bottomNavigationBar: MotionTabBar(
-            labels: ["Account", "Home", "Dashboard"],
-            initialSelectedTab: "Home",
+            labels: listOfLabels,
+            initialSelectedTab: listOfLabels[1],
             tabIconColor: Colors.green,
             tabSelectedColor: Colors.red,
             onTabItemSelected: (int value) {
@@ -85,41 +83,11 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
                 alignment: Alignment.centerLeft,
               ),
               Align(
-                alignment: Alignment.bottomCenter,
-              ),
-              Align(
-                alignment: Alignment.topRight,
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: FAB(
-                    iconColor: EducationScreenBackGroundColor,
-                    context: context,
-                    height: height,
-                  ),
-                ),
-              ),
-              Align(
                 alignment: Alignment.center,
                 child: Container(
                   child: MotionTabBarView(
                     controller: _tabController,
-                    children: <Widget>[
-                      Container(
-                        child: Center(
-                          child: Text("Account"),
-                        ),
-                      ),
-                      Container(
-                        child: Center(
-                          child: Text("Home"),
-                        ),
-                      ),
-                      Container(
-                        child: Center(
-                          child: Text("Dashboard"),
-                        ),
-                      ),
-                    ],
+                    children: listOfWidgets,
                   ),
                 ),
               )
@@ -130,3 +98,29 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
     );
   }
 }
+
+List<String> listOfLabels = ["Account", "Home", "Dashboard"];
+
+List<Widget> listOfWidgets = [
+  Container(
+    height: 200,
+    width: 200,
+    child: Center(
+      child: Text("Account"),
+    ),
+  ),
+  Container(
+    height: 200,
+    width: 200,
+    child: Center(
+      child: Text("Home"),
+    ),
+  ),
+  Container(
+    height: 200,
+    width: 200,
+    child: Center(
+      child: Text("Dashboard"),
+    ),
+  ),
+];
