@@ -19,7 +19,7 @@ class IntroPageMainWidget extends StatelessWidget {
         ),
         Text(
           introHeadTag,
-          style: TitleFontStyle,
+          style: titleFontStyle,
           textAlign: TextAlign.center,
         )
       ],

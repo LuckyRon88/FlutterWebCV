@@ -6,12 +6,12 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:roncv/Data/InformationData.dart';
 import 'package:roncv/Styles/fontsStyling.dart';
 
-class FAB extends StatelessWidget {
-  BuildContext context;
-  Color iconColor;
-  double height;
+class FloatButton extends StatelessWidget {
+  final BuildContext context;
+  final Color iconColor;
+  final double height;
 
-  FAB({this.iconColor, this.context, this.height});
+  FloatButton({this.iconColor, this.context, this.height});
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,7 @@ class FAB extends StatelessWidget {
               children: [
                 Text(
                   contactHeadLine,
-                  style: ContactHeaderStyle,
+                  style: contactHeaderStyle,
                 ),
                 SizedBox(
                   height: 20.0,
@@ -104,7 +104,7 @@ class ContactWidget extends StatelessWidget {
             ),
             SelectableText(
               this.textToDisplay,
-              style: ContactInfoStyle,
+              style: contactInfoStyle,
             ),
           ],
         ),

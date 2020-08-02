@@ -18,10 +18,10 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  UpdateType updateType;
-
   final pages = [
-    Container(child: IntroPage()),
+    Container(
+      child: IntroPage(),
+    ),
     Container(
       child: Education(),
     ),

@@ -44,8 +44,8 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
           bottomNavigationBar: MotionTabBar(
             labels: listOfEducationLabels,
             initialSelectedTab: listOfEducationLabels[0],
-            tabIconColor: Colors.black,
-            tabSelectedColor: Colors.blue,
+            tabIconColor: educationIconTabColor,
+            tabSelectedColor: educationTabSelectedColor,
             onTabItemSelected: (int value) {
               print(value);
               setState(() {
@@ -56,9 +56,9 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
               FontAwesomeIcons.graduationCap,
               FontAwesomeIcons.graduationCap,
             ],
-            textStyle: TextStyle(color: Colors.blue),
+            textStyle: TextStyle(color: educationTabSelectedColor),
           ),
-          backgroundColor: EducationScreenBackGroundColor,
+          backgroundColor: educationScreenBackGroundColor,
           body: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,

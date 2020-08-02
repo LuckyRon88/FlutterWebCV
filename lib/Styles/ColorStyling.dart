@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 //////////////Intro Screen
-const IntroScreenBackGroundColor = Colors.amber;
+final introScreenBackGroundColor = Colors.amber;
 
 ////////////////Education Widget
-const EducationScreenBackGroundColor = Colors.blue;
-const CardColorEducation = Color(0xff78f1f5);
-
+final educationScreenBackGroundColor = Colors.blue;
+final educationIconTabColor = Colors.black;
+final educationTabSelectedColor = Colors.blue;
 ///////////Work Widget
 
-const WorkScreenBackGroundColor = Colors.deepOrange;
+final workScreenBackGroundColor = Colors.deepOrange;
 
 ////////////Colors from all Pagess

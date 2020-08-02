@@ -17,7 +17,7 @@ class IntroPage extends StatelessWidget {
       color: Colors.black,
       child: SafeArea(
         child: Scaffold(
-          backgroundColor: IntroScreenBackGroundColor,
+          backgroundColor: introScreenBackGroundColor,
           body: Stack(
             children: [
               Align(
@@ -40,8 +40,8 @@ class IntroPage extends StatelessWidget {
               ),
             ],
           ),
-          floatingActionButton: FAB(
-            iconColor: IntroScreenBackGroundColor,
+          floatingActionButton: FloatButton(
+            iconColor: introScreenBackGroundColor,
             context: context,
             height: height,
           ),

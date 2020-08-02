@@ -14,13 +14,13 @@ final contactEmail = "ronald.mmma2@gmail.com";
 
 //////////Education Page
 
-int eduNumberOfTabs = 2;
+final eduNumberOfTabs = 2;
 
 ///how many tabs do you want at the bottom of the page -> Make sure to update the 2 lists below if you change the number to 3,4, etc.
 
-List<String> listOfEducationLabels = ["Bachelors", "PostGrad"];
+final listOfEducationLabels = ["Bachelors", "PostGrad"];
 
-List<Widget> listOfEducationWidgets = [
+final listOfEducationWidgets = [
   Container(
     child: CardInfo(),
   ),

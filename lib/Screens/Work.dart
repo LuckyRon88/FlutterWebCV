@@ -12,12 +12,12 @@ class Work extends StatelessWidget {
       color: Colors.black,
       child: SafeArea(
         child: Scaffold(
-          floatingActionButton: FAB(
-            iconColor: WorkScreenBackGroundColor,
+          floatingActionButton: FloatButton(
+            iconColor: workScreenBackGroundColor,
             context: context,
             height: height,
           ),
-          backgroundColor: WorkScreenBackGroundColor,
+          backgroundColor: workScreenBackGroundColor,
           body: Center(
             child: GestureDetector(
               child: FaIcon(
