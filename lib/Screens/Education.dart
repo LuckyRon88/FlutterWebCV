@@ -6,9 +6,9 @@ import 'package:motion_tab_bar/MotionTabController.dart';
 import 'package:motion_tab_bar/motiontabbar.dart';
 import 'package:provider/provider.dart';
 import 'package:roncv/Components/ArrowWidget.dart';
+import 'package:roncv/Data/InformationData.dart';
 import 'package:roncv/Styles/ColorStyling.dart';
 
-import '../Components/CardInfo.dart';
 import '../ProviderPack/PageController.dart';
 
 class Education extends StatefulWidget {
@@ -24,8 +24,8 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     myModel = Provider.of<MyModel>(context, listen: false);
-    _tabController =
-        MotionTabController(initialIndex: 0, vsync: this, length: 2);
+    _tabController = MotionTabController(
+        initialIndex: 0, vsync: this, length: eduNumberOfTabs);
   }
 
   @override
@@ -42,8 +42,8 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
       child: SafeArea(
         child: Scaffold(
           bottomNavigationBar: MotionTabBar(
-            labels: listOfLabels,
-            initialSelectedTab: listOfLabels[0],
+            labels: listOfEducationLabels,
+            initialSelectedTab: listOfEducationLabels[0],
             tabIconColor: Colors.black,
             tabSelectedColor: Colors.blue,
             onTabItemSelected: (int value) {
@@ -79,7 +79,7 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
                 child: Container(
                   child: MotionTabBarView(
                     controller: _tabController,
-                    children: listOfWidgets,
+                    children: listOfEducationWidgets,
                   ),
                 ),
               ),
@@ -101,14 +101,3 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
     );
   }
 }
-
-List<String> listOfLabels = ["Bachelors", "PostGrad"];
-
-List<Widget> listOfWidgets = [
-  Container(
-    child: CardInfo(),
-  ),
-  Container(
-    child: CardInfo(),
-  ),
-];
