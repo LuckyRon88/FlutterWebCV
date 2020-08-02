@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:roncv/Components/CardInfo.dart';
 
 //////////////INTRO PAGE DATA////////////////////////////
-final introHeadTag = "Hi! \n I'm Danny.";
+final introHeadTag = "Hi! \n I'm Ron.";
 final introProfileImageLocation = "assets/images/profilePicture.jpg";
 
 ////////////////////BottomSheet COntact information
@@ -22,9 +22,39 @@ final listOfEducationLabels = ["Bachelors", "PostGrad"];
 
 final listOfEducationWidgets = [
   Container(
-    child: CardInfo(),
+    child: CardInfo(
+      imageBannerLocation: "assets/images/uwlogo.png",
+      mainTitle: "Bachelors",
+      positionTitle: "Honours Engineering",
+      dates: "2010-2015",
+      location: "Waterloo, Canada",
+      listOfWidgetsToShowWhenExpand: <Widget>[
+        Padding(
+            padding: EdgeInsets.only(bottom: 10),
+            child: Text(
+              "sadasdasdasda",
+              softWrap: true,
+              overflow: TextOverflow.fade,
+            )),
+      ],
+    ),
   ),
   Container(
-    child: CardInfo(),
+    child: CardInfo(
+      imageBannerLocation: "assets/images/uwlogo.png",
+      mainTitle: "Bachelors",
+      positionTitle: "Honours Engineering",
+      dates: "2010-2015",
+      location: "Waterloo, Canada",
+      listOfWidgetsToShowWhenExpand: <Widget>[
+        Padding(
+            padding: EdgeInsets.only(bottom: 10),
+            child: Text(
+              "sadasdasdasda",
+              softWrap: true,
+              overflow: TextOverflow.fade,
+            )),
+      ],
+    ),
   ),
 ];

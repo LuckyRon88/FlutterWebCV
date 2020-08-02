@@ -3,6 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:roncv/Styles/fontsStyling.dart';
 
 class CardInfo extends StatelessWidget {
+  final String imageBannerLocation;
+  final String mainTitle;
+  final String positionTitle;
+  final String dates;
+  final String location;
+  final List<Widget> listOfWidgetsToShowWhenExpand;
+
+  CardInfo(
+      {this.imageBannerLocation,
+      this.mainTitle,
+      this.positionTitle,
+      this.dates,
+      this.location,
+      this.listOfWidgetsToShowWhenExpand});
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -28,7 +42,7 @@ class CardInfo extends StatelessWidget {
                       Container(
                         height: 50.0,
                         child: Image.asset(
-                          "assets/images/uwlogo.png",
+                          this.imageBannerLocation,
                           fit: BoxFit.fitHeight,
                         ),
                       ),
@@ -48,12 +62,10 @@ class CardInfo extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.baseline,
                             textBaseline: TextBaseline.alphabetic,
                             children: [
-                              Text("Bachelors", style: cvHeaderTitle),
-                              Text("Honours Mechanical Engineering",
-                                  style: cvHeaderSubTitle),
-                              Text("2010-2015", style: cvHeaderSub2Title),
-                              Text("Waterloo, Canada",
-                                  style: cvHeaderSub2Title),
+                              Text(this.mainTitle, style: cvHeaderTitle),
+                              Text(this.positionTitle, style: cvHeaderSubTitle),
+                              Text(this.dates, style: cvHeaderSub2Title),
+                              Text(this.location, style: cvHeaderSub2Title),
                             ],
                           ),
                           collapsed: Row(
@@ -72,15 +84,7 @@ class CardInfo extends StatelessWidget {
                           ),
                           expanded: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Padding(
-                                  padding: EdgeInsets.only(bottom: 10),
-                                  child: Text(
-                                    "sadasdasdasda",
-                                    softWrap: true,
-                                    overflow: TextOverflow.fade,
-                                  )),
-                            ],
+                            children: this.listOfWidgetsToShowWhenExpand,
                           ),
                           builder: (_, collapsed, expanded) {
                             return Padding(
