@@ -10,3 +10,5 @@ const CardColorEducation = Color(0xff78f1f5);
 ///////////Work Widget
 
 const WorkScreenBackGroundColor = Colors.deepOrange;
+
+////////////Colors from all Pagess

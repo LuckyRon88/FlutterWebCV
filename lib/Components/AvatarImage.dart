@@ -1,5 +1,6 @@
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter/material.dart';
+import 'package:roncv/Data/InformationData.dart';
 
 class AvatarImage extends StatelessWidget {
   @override
@@ -9,7 +10,7 @@ class AvatarImage extends StatelessWidget {
       '',
 
       child: Image.asset(
-        "assets/images/profilePicture.jpg",
+        introProfileImageLocation,
         fit: BoxFit.cover,
       ),
       radius: 50, // sets radius, default 50.0

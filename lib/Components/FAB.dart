@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+import 'package:roncv/Data/InformationData.dart';
 import 'package:roncv/Styles/fontsStyling.dart';
 
 class FAB extends StatelessWidget {
@@ -47,7 +48,7 @@ class FAB extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Contact me today!",
+                  contactHeadLine,
                   style: ContactHeaderStyle,
                 ),
                 SizedBox(
@@ -56,19 +57,19 @@ class FAB extends StatelessWidget {
                 ContactWidget(
                     icon: FontAwesomeIcons.weixin,
                     iconColor: Colors.green,
-                    textToDisplay: "vid0aksoxyz"),
+                    textToDisplay: contactWeChatID),
                 ContactWidget(
                     icon: FontAwesomeIcons.phone,
                     iconColor: Colors.black,
-                    textToDisplay: "+86 155 155 12405"),
+                    textToDisplay: contactFirstPhoneNumber),
                 ContactWidget(
                     icon: FontAwesomeIcons.phone,
                     iconColor: Colors.blueAccent,
-                    textToDisplay: "+1 740 218 1475 x3019"),
+                    textToDisplay: contactSecondPhoneNumber),
                 ContactWidget(
                     icon: FontAwesomeIcons.envelope,
                     iconColor: Colors.black,
-                    textToDisplay: "ronald.mmma2@gmail.com"),
+                    textToDisplay: contactEmail),
               ],
             ),
           ),

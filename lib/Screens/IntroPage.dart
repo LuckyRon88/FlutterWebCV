@@ -9,8 +9,6 @@ import 'package:roncv/Styles/ColorStyling.dart';
 import '../ProviderPack/PageController.dart';
 
 class IntroPage extends StatelessWidget {
-  static String title = 'Home';
-
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -36,7 +34,10 @@ class IntroPage extends StatelessWidget {
                 ),
                 alignment: Alignment.centerRight,
               ),
-              Align(alignment: Alignment.center, child: IntroPageMainWidget()),
+              Align(
+                alignment: Alignment.center,
+                child: IntroPageMainWidget(),
+              ),
             ],
           ),
           floatingActionButton: FAB(

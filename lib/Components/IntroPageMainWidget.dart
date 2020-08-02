@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:roncv/Styles/fontsStyling.dart';
 
+import '../Data/InformationData.dart';
 import 'AvatarImage.dart';
 
 class IntroPageMainWidget extends StatelessWidget {
@@ -17,7 +18,7 @@ class IntroPageMainWidget extends StatelessWidget {
           height: 10.0,
         ),
         Text(
-          "Hi! \n I'm Danny.",
+          introHeadTag,
           style: TitleFontStyle,
           textAlign: TextAlign.center,
         )
