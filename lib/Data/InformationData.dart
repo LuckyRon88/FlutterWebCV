@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:roncv/Components/Achievements.dart';
 import 'package:roncv/Components/BulletPoint.dart';
 import 'package:roncv/Components/CardInfo.dart';
 import 'package:roncv/Components/LanguageSection.dart';
@@ -21,7 +22,7 @@ final listOfFeatureLabels = ["Languages", "Achievements"];
 
 final listOfFeatureWidgets = [
   Languages(),
-  Text("achievements"),
+  Achievements(),
 ];
 
 /////////////WORK PAGE -------_>>>>>>>>>>>>>>> ONLY WORK STUFFFFF

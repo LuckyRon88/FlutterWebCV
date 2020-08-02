@@ -49,3 +49,9 @@ final TextStyle languageSkillTitle = GoogleFonts.arvo(
   fontWeight: FontWeight.normal,
   color: Colors.black,
 );
+
+final TextStyle achieveSkillTitle = GoogleFonts.arvo(
+  fontSize: 13.0,
+  fontWeight: FontWeight.normal,
+  color: Colors.black,
+);
