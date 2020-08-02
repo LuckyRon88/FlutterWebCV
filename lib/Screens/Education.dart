@@ -23,6 +23,7 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
+    print("created Tab controller");
     myModel = Provider.of<MyModel>(context, listen: false);
     _tabController = MotionTabController(
         initialIndex: 0, vsync: this, length: eduNumberOfTabs);
