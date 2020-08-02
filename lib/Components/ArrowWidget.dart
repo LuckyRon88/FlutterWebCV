@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ArrowWidget extends StatefulWidget {
   final bool pointsLeft;
@@ -10,18 +9,19 @@ class ArrowWidget extends StatefulWidget {
 
 class _ArrowWidgetState extends State<ArrowWidget>
     with TickerProviderStateMixin {
-
   AnimationController motionController;
   Animation motionAnimation;
-  double size = 20;
+  double size = 1;
 
   void initState() {
     super.initState();
 
     motionController = AnimationController(
-      duration: Duration(milliseconds: 600,),
+      duration: Duration(
+        milliseconds: 600,
+      ),
       vsync: this,
-      lowerBound: 0.9,
+      lowerBound: 0.95,
     );
 
     motionAnimation = CurvedAnimation(
@@ -48,19 +48,19 @@ class _ArrowWidgetState extends State<ArrowWidget>
     // motionController.repeat();
   }
 
-
   @override
   void dispose() {
     motionController.dispose();
     super.dispose();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Icon(
-        !this.widget.pointsLeft ? Icons.keyboard_arrow_right:Icons.keyboard_arrow_left,
+        !this.widget.pointsLeft
+            ? Icons.keyboard_arrow_right
+            : Icons.keyboard_arrow_left,
         size: size,
         color: Colors.black,
       ),

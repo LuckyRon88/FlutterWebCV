@@ -6,9 +6,11 @@ import 'package:motion_tab_bar/MotionTabController.dart';
 import 'package:motion_tab_bar/motiontabbar.dart';
 import 'package:provider/provider.dart';
 import 'package:roncv/Components/ArrowWidget.dart';
+import 'package:roncv/Screens/Bachelors.dart';
 import 'package:roncv/Styles/ColorStyling.dart';
 
 import '../ProviderPack/PageController.dart';
+import 'PostGrad.dart';
 
 class Education extends StatefulWidget {
   @override
@@ -61,6 +63,7 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
           body: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               RawMaterialButton(
                 splashColor: Colors.transparent,
@@ -104,13 +107,9 @@ List<String> listOfLabels = ["Bachelors", "PostGrad"];
 
 List<Widget> listOfWidgets = [
   Container(
-    child: Center(
-      child: Text("Bachelors"),
-    ),
+    child: Bachelors(),
   ),
   Container(
-    child: Center(
-      child: Text("PostGrad"),
-    ),
+    child: PostGrad(),
   ),
 ];

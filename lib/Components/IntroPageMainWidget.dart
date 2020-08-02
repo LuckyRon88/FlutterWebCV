@@ -17,7 +17,7 @@ class IntroPageMainWidget extends StatelessWidget {
           height: 10.0,
         ),
         Text(
-          "Hi! \n I'm Ron.",
+          "Hi! \n I'm Danny.",
           style: TitleFontStyle,
           textAlign: TextAlign.center,
         )
