@@ -43,3 +43,9 @@ final TextStyle findOutMoreStyle = GoogleFonts.arvo(
   fontWeight: FontWeight.normal,
   color: Colors.black,
 );
+
+final TextStyle languageSkillTitle = GoogleFonts.arvo(
+  fontSize: 18.0,
+  fontWeight: FontWeight.normal,
+  color: Colors.black,
+);

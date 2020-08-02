@@ -9,7 +9,14 @@ final educationIconTabColor = Colors.black;
 final educationTabSelectedColor = Colors.blue;
 ///////////Work Widget
 
-final workScreenBackGroundColor = Colors.deepOrange;
+final workScreenBackGroundColor = Colors.red;
 final workIconTabColor = Colors.black;
-final workTabSelectedColor = Colors.deepOrange;
+final workTabSelectedColor = Colors.red;
+
+/////////////FEATURE Page
+
+final featureScreenBackGroundColor = Colors.green;
+final featureIconTabColor = Colors.black;
+final featureTabSelectedColor = Colors.green;
+
 ////////////Colors from all Pagess

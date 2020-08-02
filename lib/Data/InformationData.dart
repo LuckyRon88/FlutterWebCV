@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:roncv/Components/BulletPoint.dart';
 import 'package:roncv/Components/CardInfo.dart';
+import 'package:roncv/Components/LanguageSection.dart';
 
 //////////////INTRO PAGE DATA////////////////////////////
 final introHeadTag = "Hi! \n I'm Ron.";
@@ -12,6 +13,16 @@ final contactWeChatID = "vid0aksoxyz";
 final contactFirstPhoneNumber = "+86-155-155-12405";
 final contactSecondPhoneNumber = "+1-740-218-1475 x3019";
 final contactEmail = "ronald.mmma2@gmail.com";
+
+////////////////////FEATURE PAGE///////////////
+final featureNumberOfTabs = 2;
+
+final listOfFeatureLabels = ["Languages", "Achievements"];
+
+final listOfFeatureWidgets = [
+  Languages(),
+  Text("achievements"),
+];
 
 /////////////WORK PAGE -------_>>>>>>>>>>>>>>> ONLY WORK STUFFFFF
 

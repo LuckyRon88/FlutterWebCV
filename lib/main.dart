@@ -7,6 +7,7 @@ import 'package:roncv/Screens/IntroPage.dart';
 import 'package:roncv/Screens/Work.dart';
 
 import 'ProviderPack/PageController.dart';
+import 'Screens/FeaturePage.dart';
 
 void main() {
   runApp(
@@ -28,6 +29,9 @@ class MyApp extends StatelessWidget {
     Container(
       child: Work(),
     ),
+    Container(
+      child: FeaturePage(),
+    )
   ];
 
   @override
