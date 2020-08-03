@@ -1,14 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:motion_tab_bar/MotionTabBarView.dart';
-import 'package:motion_tab_bar/MotionTabController.dart';
-import 'package:motion_tab_bar/motiontabbar.dart';
 import 'package:provider/provider.dart';
 import 'package:roncv/Components/ArrowWidget.dart';
 import 'package:roncv/Data/InformationData.dart';
 import 'package:roncv/ProviderPack/PageController.dart';
 import 'package:roncv/Styles/ColorStyling.dart';
+import 'package:roncv/motionbar/MotionTabBarView.dart';
+import 'package:roncv/motionbar/MotionTabController.dart';
+import 'package:roncv/motionbar/motiontabbar.dart';
 
 class Work extends StatefulWidget {
   @override
@@ -53,9 +52,9 @@ class _WorkState extends State<Work> with TickerProviderStateMixin {
               });
             },
             icons: [
-              FontAwesomeIcons.briefcase,
-              FontAwesomeIcons.briefcase,
-              FontAwesomeIcons.briefcase,
+              Icons.business_center,
+              Icons.business_center,
+              Icons.business_center,
             ],
             textStyle: TextStyle(color: workTabSelectedColor),
           ),

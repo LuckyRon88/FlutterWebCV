@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:liquid_swipe/PageHelpers/LiquidController.dart';
 
 class MyModel with ChangeNotifier {
-  int page = 0;
+  int page = 1;
   LiquidController liquidController;
 
   MyModel() {
