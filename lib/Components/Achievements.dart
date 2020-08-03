@@ -77,6 +77,7 @@ class Achieve extends StatelessWidget {
         ),
         Text(
           this.summary,
+          textAlign: TextAlign.start,
           softWrap: true,
         ),
         SizedBox(
