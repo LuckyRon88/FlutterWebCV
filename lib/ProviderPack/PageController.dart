@@ -10,7 +10,6 @@ class MyModel with ChangeNotifier {
   }
 
   void nextPage() {
-    print("next page");
     liquidController.animateToPage(
       page: getCurrentPage() + 1,
       duration: 600,
@@ -19,7 +18,6 @@ class MyModel with ChangeNotifier {
   }
 
   void previousPage() {
-    print("previous page");
     liquidController.animateToPage(
       page: getCurrentPage() - 1,
       duration: 600,

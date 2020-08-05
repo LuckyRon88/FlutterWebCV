@@ -28,9 +28,7 @@ class AvatarImage extends StatelessWidget {
       foregroundColor: Colors.amberAccent.withOpacity(
           0.5), //sets foreground colour, it works if showInitialTextAbovePicture = true , default Colors.transparent
       cacheImage: true, // allow widget to cache image against provided url
-      onTap: () {
-        print('Ron');
-      }, // sets on tap
+      // sets on tap
       showInitialTextAbovePicture: true,
       // setting it true will show initials text above profile picture, default false
     ));

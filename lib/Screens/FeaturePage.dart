@@ -21,7 +21,7 @@ class _FeaturePageState extends State<FeaturePage>
   @override
   void initState() {
     super.initState();
-    print("created Tab controller");
+
     myModel = Provider.of<MyModel>(context, listen: false);
     _featureTabController = MotionTabController(
         initialIndex: 0, vsync: this, length: featureNumberOfTabs);
@@ -30,7 +30,7 @@ class _FeaturePageState extends State<FeaturePage>
   @override
   void dispose() {
     super.dispose();
-    print("disposed of tab controller");
+
     _featureTabController.dispose();
   }
 
@@ -46,7 +46,6 @@ class _FeaturePageState extends State<FeaturePage>
             tabIconColor: featureIconTabColor,
             tabSelectedColor: featureTabSelectedColor,
             onTabItemSelected: (int value) {
-              print(value);
               setState(() {
                 _featureTabController.index = value;
               });

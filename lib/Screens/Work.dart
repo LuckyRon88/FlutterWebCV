@@ -21,7 +21,7 @@ class _WorkState extends State<Work> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    print("created Tab controller");
+
     myModel = Provider.of<MyModel>(context, listen: false);
     _workTabController = MotionTabController(
         initialIndex: 0, vsync: this, length: workNumberOfTabs);
@@ -30,7 +30,7 @@ class _WorkState extends State<Work> with TickerProviderStateMixin {
   @override
   void dispose() {
     super.dispose();
-    print("disposed of tab controller");
+
     _workTabController.dispose();
   }
 
@@ -46,7 +46,6 @@ class _WorkState extends State<Work> with TickerProviderStateMixin {
             tabIconColor: workIconTabColor,
             tabSelectedColor: workTabSelectedColor,
             onTabItemSelected: (int value) {
-              print(value);
               setState(() {
                 _workTabController.index = value;
               });
