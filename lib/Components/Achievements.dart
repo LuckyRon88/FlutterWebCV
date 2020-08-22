@@ -37,7 +37,7 @@ class Achievements extends StatelessWidget {
                   title: "Research",
                   iconToDisplay: FontAwesomeIcons.glasses,
                   summary:
-                      "- Found a solution to connect to Google.com from Central China with 40ms TCP ping and at 90% network speed.",
+                      "- Found a solution to connect to Google.com from Central China with 40ms TCP ping and at 90% network speed. I also installed a home wide networking solution with 95%+ up-time.",
                 ),
               ],
             ),
@@ -59,6 +59,7 @@ class Achieve extends StatelessWidget {
     return Column(
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             FaIcon(
               this.iconToDisplay,
@@ -77,7 +78,7 @@ class Achieve extends StatelessWidget {
         ),
         Text(
           this.summary,
-          textAlign: TextAlign.start,
+          textAlign: TextAlign.left,
           softWrap: true,
         ),
         SizedBox(
