@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 
 //////////////Intro Screen
-final introScreenBackGroundColor = Colors.amber;
+const introScreenBackGroundColor = Color(0xfff4f6f5);
 
 ////////////////Education Widget
-final educationScreenBackGroundColor = Colors.blue;
-final educationIconTabColor = Colors.black;
-final educationTabSelectedColor = Colors.blue;
+const educationScreenBackGroundColor = Color(0xff242424);
+const educationIconTabColor = Colors.black;
+const educationTabSelectedColor = Color(0xffe31212);
 ///////////Work Widget
 
-final workScreenBackGroundColor = Colors.red;
-final workIconTabColor = Colors.black;
-final workTabSelectedColor = Colors.red;
+const workScreenBackGroundColor = Color(0xfff4f6f5);
+const workIconTabColor = Colors.black;
+const workTabSelectedColor = Color(0xffe31212);
 
 /////////////FEATURE Page
 
-final featureScreenBackGroundColor = Colors.green;
-final featureIconTabColor = Colors.black;
-final featureTabSelectedColor = Colors.green;
+const featureScreenBackGroundColor = Color(0xff242424);
+const featureIconTabColor = Colors.black;
+const featureTabSelectedColor = Color(0xffe31212);
 
 ////////////Colors from all Pagess

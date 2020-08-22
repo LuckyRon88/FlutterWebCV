@@ -13,7 +13,7 @@ class AvatarImage extends StatelessWidget {
         introProfileImageLocation,
         fit: BoxFit.cover,
       ),
-      radius: 50, // sets radius, default 50.0
+      radius: 80, // sets radius, default 50.0
       backgroundColor:
           Colors.transparent, // sets background color, default Colors.white
       borderWidth: 1, // sets border, default 0.0
@@ -21,8 +21,7 @@ class AvatarImage extends StatelessWidget {
         "RM",
         style: TextStyle(fontSize: 40, color: Colors.white),
       ), // sets initials text, set your own style, default Text('')
-      borderColor:
-          Colors.amberAccent, // sets border color, default Colors.white
+      borderColor: Colors.white, // sets border color, default Colors.white
       elevation:
           5.0, // sets elevation (shadow of the profile picture), default value is 0.0
       foregroundColor: Colors.amberAccent.withOpacity(

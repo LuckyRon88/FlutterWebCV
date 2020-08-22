@@ -22,7 +22,7 @@ class Achievements extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Achieve(
-                  title: "Professional Accomplishment",
+                  title: "Professional",
                   iconToDisplay: FontAwesomeIcons.trophy,
                   summary:
                       "- Ranked 1 in Canada for most high end vision applications (linescan, 3D, measurements, and surface defects) successfully tested, sold and supported for 2017.",
